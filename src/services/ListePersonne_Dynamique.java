@@ -7,7 +7,7 @@ public class ListePersonne_Dynamique {
     private Personne[] personnes;
 
     public ListePersonne_Dynamique() {
-        personnes = new Personne[0];
+        this.personnes = new Personne[0];
     }
 
     public int getNombre() {
@@ -26,6 +26,9 @@ public class ListePersonne_Dynamique {
         Personne[] tempPersonne;
         // ajouter la valeur
         tempPersonne = new Personne[personnes.length + 1];
+        for (int i = 0; i < personnes.length; i++) {
+            tempPersonne[i] = personnes[i];
+        }
         tempPersonne[tempPersonne.length - 1] = p;
         marcher = true;
         // met l'ancien tableau à niveau
@@ -38,7 +41,7 @@ public class ListePersonne_Dynamique {
         Personne[] tempPersonne;
         tempPersonne = new Personne[personnes.length - 1];
         // ça va chercher la valeur
-        for (int i = 0; i < tempPersonne.length; i++) {
+        /*for (int i = 0; i < tempPersonne.length; i++) {
             if (tempPersonne[i] == p) {
                 tempPersonne[i] = null;
                 marcher = true;
@@ -51,7 +54,19 @@ public class ListePersonne_Dynamique {
                 }
                 personnes = tempPersonne;
             }
+        }*/
+        int x = 0;
+        for (int i = 0; i < personnes.length; i++) {
+            if (p != personnes[i]) {
+                tempPersonne[i] = personnes[x];
+                x++;
+            }
+            else{
+                x++;
+            }
         }
+        marcher = true;
+        personnes = tempPersonne;
         return marcher;
     }
 
