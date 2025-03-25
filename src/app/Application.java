@@ -41,7 +41,6 @@ public class Application {
             //listeSansTrous.ajouter(personnes[i]);
             //listeAvecTrous.ajouter(personnes[i]);
         }
-
         System.out.println("----------------------------------------------------");
         System.out.println("ListePersonne_Dynamique");
         System.out.println("----------------------------------------------------");

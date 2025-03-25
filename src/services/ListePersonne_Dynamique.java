@@ -37,37 +37,17 @@ public class ListePersonne_Dynamique {
     }
 
     public boolean supprimer(Personne p) {
-        boolean marcher = false;
-        Personne[] tempPersonne;
-        tempPersonne = new Personne[personnes.length - 1];
-        // ça va chercher la valeur
-        /*for (int i = 0; i < tempPersonne.length; i++) {
-            if (tempPersonne[i] == p) {
-                tempPersonne[i] = null;
-                marcher = true;
-                // ça va bouger les valeurs
-                for (int j = i; j < tempPersonne.length; j++) {
-                    tempPersonne[j] = tempPersonne[j + 1];
-                    if (j == tempPersonne.length - 1) {
-                        break;
-                    }
-                }
-                personnes = tempPersonne;
-            }
-        }*/
+        boolean suppressionReussi = false;
+        Personne[] temp = new Personne[personnes.length - 1];
         int x = 0;
         for (int i = 0; i < personnes.length; i++) {
             if (p != personnes[i]) {
-                tempPersonne[i] = personnes[x];
-                x++;
-            }
-            else{
+                temp[x] = personnes[i];
                 x++;
             }
         }
-        marcher = true;
-        personnes = tempPersonne;
-        return marcher;
+        personnes = temp;
+        return suppressionReussi;
     }
 
     public void afficher() {
