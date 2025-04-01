@@ -23,16 +23,19 @@ public class ListePersonne_Dynamique {
 
     public boolean ajouter(Personne p) {
         boolean marcher = false;
-        Personne[] tempPersonne;
-        // ajouter la valeur
-        tempPersonne = new Personne[personnes.length + 1];
-        for (int i = 0; i < personnes.length; i++) {
-            tempPersonne[i] = personnes[i];
+        if (p != null)
+        {
+            Personne[] tempPersonne;
+            // ajouter la valeur
+            tempPersonne = new Personne[personnes.length + 1];
+            for (int i = 0; i < personnes.length; i++) {
+                tempPersonne[i] = personnes[i];
+            }
+            tempPersonne[tempPersonne.length - 1] = p;
+            marcher = true;
+            // met l'ancien tableau à niveau
+            personnes = tempPersonne;
         }
-        tempPersonne[tempPersonne.length - 1] = p;
-        marcher = true;
-        // met l'ancien tableau à niveau
-        personnes = tempPersonne;
         return marcher;
     }
 
