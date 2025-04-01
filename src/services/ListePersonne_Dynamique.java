@@ -26,7 +26,7 @@ public class ListePersonne_Dynamique {
         if (p != null)
         {
             Personne[] tempPersonne;
-            // ajouter la valeur
+            // ajuster la taille du nouveau tableau temporaire +1 par rapport au tableau de base
             tempPersonne = new Personne[personnes.length + 1];
             for (int i = 0; i < personnes.length; i++) {
                 tempPersonne[i] = personnes[i];
