@@ -42,6 +42,10 @@ public class ListePersonne_Dynamique {
         int x = 0;
         for (int i = 0; i < personnes.length; i++) {
             if (p != personnes[i]) {
+                if (x == personnes.length-1) {
+                    temp = personnes;
+                    break;
+                }
                 temp[x] = personnes[i];
                 x++;
             }
