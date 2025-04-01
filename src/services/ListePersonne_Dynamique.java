@@ -41,15 +41,18 @@ public class ListePersonne_Dynamique {
 
     public boolean supprimer(Personne p) {
         boolean suppressionReussi = false;
-        Personne[] temp = new Personne[personnes.length - 1];
-        int x = 0;
-        for (int i = 0; i < personnes.length; i++) {
-            if (p != personnes[i]) {
-                temp[x] = personnes[i];
-                x++;
+        if (p != null)
+        {
+            Personne[] temp = new Personne[personnes.length - 1];
+            int x = 0;
+            for (int i = 0; i < personnes.length; i++) {
+                if (p != personnes[i]) {
+                    temp[x] = personnes[i];
+                    x++;
+                }
             }
+            personnes = temp;
         }
-        personnes = temp;
         return suppressionReussi;
     }
 
